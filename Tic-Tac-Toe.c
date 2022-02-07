@@ -233,7 +233,6 @@ int main()
     if (random < 25) who_is_first = 1; //computer
     if (random > 25) who_is_first = 2; //user
     
-    int turn_count = 0;
     do {
         system("clear");
         
@@ -269,15 +268,14 @@ int main()
             printf("%d \n", checkBoard());
         }
         
-        turn_count++;
-    } while (checkBoard() == 0 && turn_count < 3);
+    } while (checkBoard() == 0);
     
     system("clear");
     show();
     
     if (checkBoard() == 1) printf("You lost!");
     if (checkBoard() == 2) printf("You won!");
-    if (checkBoard() == -1 || checkBoard() == 0) printf("Draw!");
+    if (checkBoard() == -1) printf("Draw!");
 
     return 0;
 }
